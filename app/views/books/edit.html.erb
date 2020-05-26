@@ -1,0 +1,25 @@
+<div class="col-md-8 col-md-offset-2">
+	<%= form_with(model: @book) do |f| %>
+		<div class='forms'>
+			<%= f.label '日付' %><br>
+			<%= f.date_field :sale_date %>
+		</div>
+
+		<div class='forms'>
+			<%= f.label '科目' %><br>
+			<%= f.select :name, [['食費','食費'],['ベッド修理費','ベッド修理費'],['定期徴収','定期徴収'],['生活費','生活費'],['日用品','日用品'],['その他','その他']], include_blank: '選択してください', class: 'form-control', autofocus: true %>
+		</div>
+
+		<div class='forms'>
+			<%= f.label '金額' %>
+			<%= f.number_field :money, placeholder: '半角数字で入力してください', class: 'form-control' %>
+		</div>
+
+		<div class='forms'>
+			<%= f.label '詳細' %>
+			<%= f.text_area :comment, class: 'form-control' %>
+		</div>
+		<br>
+		<%= f.submit '登録' %>
+	<% end %>
+</div>

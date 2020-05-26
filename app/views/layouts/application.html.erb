@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kakeibo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class='container'>
+        <div class='col-sm-5'>
+          <h1>ローカル家計簿</h1>
+        </div>
+        <div class='col-sm-7'>
+          <ul>
+            <% if user_signed_in? %>
+              <li><%= link_to '新規登録', new_book_path %></li>
+              <li><%= link_to '全データ', books_all_path %></li>
+              <li><%= link_to '今月データ', books_path %></li>
+              <li><%= link_to '先月データ', ago_books_path %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+    </header>
+    <div class="container-fluid main" style='background-color: #FFE4B5;'>
+    <%= yield %>
+    </div>
+  </body>
+</html>
