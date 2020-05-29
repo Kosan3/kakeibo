@@ -17,9 +17,9 @@
 @import "bootstrap";
 
 header {
-	height: 100px;
+	height: 115px;
 	background-color: #98fb98;
-	h1 {
+	h2 {
 		color: white;
 		padding-left: 30px;
 	}
@@ -42,4 +42,8 @@ header {
 .index {
 	background-color: #FFFAFA;
 	border: solid 2px black;
+}
+
+.forms {
+	margin-top: 10px;
 }
