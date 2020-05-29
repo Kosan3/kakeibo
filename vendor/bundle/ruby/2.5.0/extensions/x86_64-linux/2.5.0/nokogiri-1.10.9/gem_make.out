@@ -1,5 +1,5 @@
 current directory: /home/vagrant/work/kakeibo/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.9/ext/nokogiri
-/home/vagrant/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20200528-32644-1pf0sv6.rb extconf.rb --use-system-libraries
+/home/vagrant/.rbenv/versions/2.5.7/bin/ruby -r ./siteconf20200529-10062-1sbt4y4.rb extconf.rb --use-system-libraries
 checking if the C compiler accepts ... yes
 Building nokogiri using system libraries.
 pkg-config could not be used to find libxslt
