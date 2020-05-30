@@ -17,9 +17,8 @@
 @import "bootstrap";
 
 header {
-	height: 115px;
 	background-color: #98fb98;
-	h2 {
+	h3 {
 		color: white;
 		padding-left: 30px;
 	}
@@ -46,4 +45,9 @@ header {
 
 .forms {
 	margin-top: 10px;
+}
+
+@media screen and (max-width:768px) {
+	header {
+	}
 }
