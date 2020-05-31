@@ -17,7 +17,10 @@
 @import "bootstrap";
 
 header {
-	background-color: #98fb98;
+	background-color: #d46004;
+	a {
+		color: white;
+	}
 	h3 {
 		color: white;
 		padding-left: 30px;
@@ -45,8 +48,8 @@ table {
 }
 
 .index {
-	background-color: #FFFAFA;
 	border: solid 2px black;
+	background-color: white;
 }
 
 .forms {
