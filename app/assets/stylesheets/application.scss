@@ -33,6 +33,12 @@ header {
 	}
 }
 
+table {
+	a {
+		color: black;
+	}
+}
+
 
 .date-form {
 	width: 100%;
@@ -49,5 +55,19 @@ header {
 
 @media screen and (max-width:768px) {
 	header {
+	}
+
+	.index {
+		table {
+			a {
+				color: black;
+			}
+			th {
+				font-size: 12px;
+			}
+			td {
+				font-size: 10px;
+			}
+		}
 	}
 }

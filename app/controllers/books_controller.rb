@@ -38,6 +38,11 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
   end
 
+  def show
+    @book = Book.find(params[:id])
+    @today = DateTime.now
+  end
+
   def edit
     @book = Book.find(params[:id])
   end

@@ -8,8 +8,6 @@
 					<th>日付</th>
 					<th>項目</th>
 					<th>金額</th>
-					<th>コメント</th>
-					<th colspan=2></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -18,9 +16,6 @@
 					<td><%= book.sale_date.strftime("%m-%d")  %></td>
 					<td><%= book.name %></td>
 					<td><%= book.money.to_s(:delimited) %></td>
-					<td><%= book.comment %></td>
-					<td><%= link_to 'EDIT', edit_book_path(book), class: 'btn btn-primary btn-xs' %></td>
-					<td><%= link_to 'DELETE', book_path(book), method: :delete, 'data-confirm' => '本当に削除しますか?', class: 'btn btn-danger btn-xs' %>
 				</tr>
 				<% end %>
 			</tbody>
@@ -29,9 +24,6 @@
 					<th></th>
 					<th>合計金額</th>
 					<th><%= default(@books_all_sum) %></th>
-					<th></th>
-					<th></th>
-					<th></th>
 				</tr>
 			</tfoot>
 		</table>
