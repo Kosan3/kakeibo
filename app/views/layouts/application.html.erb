@@ -20,8 +20,8 @@
           <ul>
             <% if user_signed_in? %>
               <li><%= link_to '新規登録', new_book_path %></li>
-              <li><%= link_to '全データ', books_all_path %></li>
-              <li><%= link_to '今月データ', books_path %></li>
+              <li><%= link_to '今月データ', books_all_path %></li>
+              <li><%= link_to '全データ', books_path %></li>
               <li><%= link_to '先月データ', ago_books_path %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>

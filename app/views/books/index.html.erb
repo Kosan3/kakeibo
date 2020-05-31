@@ -1,7 +1,19 @@
 <div class="row" style="margin: 15px 0;">
 	<div class="col-xs-12 col-md-8 col-md-offset-2 index">
+		<%= search_form_for(@q) do |f| %>
+			<div class="forms">
+				<%= f.label :name_cont, '項目' %>
+				<%= f.search_field :name_cont %>
+				<%= f.submit '検索', class: 'btn btn-primary' %>
+			</div>
+			<div class="forms">
+				<%= f.label :sale_date_cont, '日付' %>
+				<%= f.search_field :sale_date_cont, placeholder: '2020-03-01' %>
+				<%= f.submit '検索', class: 'btn btn-danger' %>
+			</div>
+		<% end %>
 		<p><%= @user.name %>さんの支出</p>
-		<h4><%= @now_month.strftime('%Y年%m月') %></h4>
+		<h4>全データ</h4>
 		<table class='table'>
 			<thead>
 				<tr>
@@ -11,7 +23,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% @books.each do |book| %>
+				<% @books_all.each do |book| %>
 				<tr>
 					<td><%= link_to book.sale_date.strftime("%m/%d"), book_path(book)  %></td>
 					<td><%= link_to book.name, book_path(book) %></td>
@@ -23,7 +35,7 @@
 				<tr>
 					<th></th>
 					<th>合計</th>
-					<th><%= default(@books_sum) %></th>
+					<th><%= default(@books_all_sum) %></th>
 				</tr>
 			</tfoot>
 		</table>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   	registrations: 'users/registrations',
   	sessions: 'users/sessions'
   }
-  root 'books#index'
+  root 'books#index_all'
   resources :books
   get '/books_all' => 'books#index_all'
   get '/ago_books' => 'books#index_ago'

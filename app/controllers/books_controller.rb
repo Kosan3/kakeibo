@@ -10,13 +10,13 @@ class BooksController < ApplicationController
   	book = Book.new(book_params)
     book.user_id = current_user.id
   	if book.save
-  	  	redirect_to books_path
+  	  	redirect_to books_all_path
   	else
   		render 'new'
   	end
   end
 
-  def index
+  def index_all
   	@now_month = DateTime.now
     this_month = DateTime.now.all_month
     @books = Book.where(sale_date: this_month, user_id: current_user.id).order(sale_date: :asc)
@@ -24,8 +24,9 @@ class BooksController < ApplicationController
     @user = User.find(current_user.id)
   end
 
-  def index_all
-    @books_all = Book.where(user_id: current_user.id).order(sale_date: :asc)
+  def index
+    @q = current_user.books.ransack(params[:q])
+    @books_all = @q.result(distinct: true).order(sale_date: :asc)
     @books_all_sum = Book.where(user_id: current_user.id).sum(:money).to_s(:delimited)
     @user = User.find(current_user.id)
   end

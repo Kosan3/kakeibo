@@ -73,3 +73,4 @@ group :production do
   gem 'mysql2'
 end
 gem 'nokogiri', ">= 1.11.0.rc2"
+gem 'ransack'
