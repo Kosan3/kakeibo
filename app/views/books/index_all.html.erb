@@ -1,7 +1,7 @@
 <div class="row" style="margin: 15px 0;">
 	<div class="col-xs-12 col-md-8 col-md-offset-2 index">
 		<p><%= @user.name %>さんの支出</p>
-		<h2>全データ</h2>
+		<h4>全データ</h4>
 		<table class='table'>
 			<thead>
 				<tr>
@@ -13,8 +13,8 @@
 			<tbody>
 				<% @books_all.each do |book| %>
 				<tr>
-					<td><%= book.sale_date.strftime("%m-%d")  %></td>
-					<td><%= book.name %></td>
+					<td><%= link_to book.sale_date.strftime("%m-%d"), book_path(book)  %></td>
+					<td><%= link_to book.name, book_path(book) %></td>
 					<td><%= book.money.to_s(:delimited) %></td>
 				</tr>
 				<% end %>
@@ -22,7 +22,7 @@
 			<tfoot>
 				<tr>
 					<th></th>
-					<th>合計金額</th>
+					<th>合計</th>
 					<th><%= default(@books_all_sum) %></th>
 				</tr>
 			</tfoot>
